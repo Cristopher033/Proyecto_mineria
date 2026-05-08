@@ -648,4 +648,6 @@ if __name__ == "__main__":
     print("Abre tu navegador en: http://localhost:8050")
     if df is None:
         print("Solo la pestaña de Modelo Predictivo estará disponible.")
-    app.run(debug=False, host='0.0.0.0', port=8050)
+    server = app.server  # ← línea nueva, necesaria para deployment
+    if __name__ == "__main__":
+        app.run(debug=False, host='0.0.0.0', port=8050)
